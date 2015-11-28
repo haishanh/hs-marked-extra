@@ -8,6 +8,8 @@ Currently feature:
 
 Admonition in this module is a porting of [waylan's Python-Markdown admonition][waylan-md]. More infomation about that can be found [here][waylan-ad]. With CSS, admonition can make your rendered page more beautiful and expressive.
 
+For example text below:
+
 ```text
 !!! note "Don't forget to drink water"
     first line here.
@@ -15,7 +17,7 @@ Admonition in this module is a porting of [waylan's Python-Markdown admonition][
     second line here.
 ```
 
-The word "note" is considered as level, string "Don't forget to drink water" is considered as title. This will produce:
+will produce:
 
 ```text
 <div class="admonition note">
@@ -25,7 +27,9 @@ The word "note" is considered as level, string "Don't forget to drink water" is 
 </div>
 ```
 
-If the title is being omitted, then the level string will be the title(with 1st letter capitalized).
+In the above example, the word "note" is considered as level, the string "Don't forget to drink water" is considered as title.
+
+If the title is being omitted, then the level string will be the title(with 1st letter capitalized). So
 
 ```text
 !!! danger
