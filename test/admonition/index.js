@@ -4,15 +4,24 @@ var should = require('chai').should();
 var fs = require('fs');
 var render = require('../../');
 
+var adOpt = { admonition: true };
+
 
 describe('Admonition', function (){
   describe('One admonition', function (){
+
+    it('only work when options.admonition is true', function () {
+      var text = '!!! note "This is title"\n    first line\n    second line\n';
+      var out = '<p>!!! note &quot;This is title&quot;\n    first line\n    second line</p>\n';
+      render(text).should.equal(out);
+    });
+
     it('with a title', function () {
       var text = '!!! note "This is title"\n    first line\n    second line\n';
       var out = '<div class="admonition note">\n' + 
         '<p class="admonition-title">This is title</p>\n' +
         '<p>first line\n    second line</p>\n</div>\n';
-      render(text).should.equal(out);
+      render(text, adOpt).should.equal(out);
     });
 
     it('with a title - level name normalization', function () {
@@ -20,7 +29,7 @@ describe('Admonition', function (){
       var out = '<div class="admonition danger">\n' + 
         '<p class="admonition-title">This is title</p>\n' +
         '<p>first line\n    second line</p>\n</div>\n';
-      render(text).should.equal(out);
+      render(text, adOpt).should.equal(out);
     });
 
     it('without a title', function () {
@@ -28,7 +37,7 @@ describe('Admonition', function (){
       var out = '<div class="admonition note">\n' + 
         '<p class="admonition-title">Note</p>\n' +
         '<p>first line\n    second line</p>\n</div>\n';
-      render(text).should.equal(out);
+      render(text, adOpt).should.equal(out);
     });
 
     it('proceeded paragraph', function () {
@@ -38,7 +47,7 @@ describe('Admonition', function (){
         '<div class="admonition note">\n' + 
         '<p class="admonition-title">This is title</p>\n' +
         '<p>first line\n    second line</p>\n</div>\n';
-      render(text).should.equal(out);
+      render(text, adOpt).should.equal(out);
     });
 
     it('immediately followed block level code ' +
@@ -49,7 +58,7 @@ describe('Admonition', function (){
       var out = '<div class="admonition note">\n' + 
         '<p class="admonition-title">This is title</p>\n' +
         '<p>first line\nsecond line</p>\n</div>\n';
-      render(text).should.equal(out);
+      render(text, adOpt).should.equal(out);
     });
 
     it('immediately followed fenced code ' +
@@ -64,7 +73,7 @@ describe('Admonition', function (){
         '<p class="admonition-title">This is title</p>\n' +
         '</div>\n' +
         '<pre><code>first line\nsecond line\n</code></pre>';
-      render(text).should.equal(out);
+      render(text, adOpt).should.equal(out);
     });
   });
 
@@ -85,7 +94,7 @@ describe('Admonition', function (){
                 '<p class="admonition-title">Here is a info</p>\n' +
                 '<p>1st line</p>\n' +
                 '</div>\n';
-      render(text).should.equal(out);
+      render(text, adOpt).should.equal(out);
     });
 
     it('with paragraph between two', function () {
@@ -106,7 +115,7 @@ describe('Admonition', function (){
                 '<p class="admonition-title">Here is a info</p>\n' +
                 '<p>1st line</p>\n' +
                 '</div>\n';
-      render(text).should.equal(out);
+      render(text, adOpt).should.equal(out);
     });
   });
 });
