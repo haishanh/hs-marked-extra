@@ -20,7 +20,7 @@ describe('Admonition', function (){
       var text = '!!! note "This is title"\n    first line\n    second line\n';
       var out = '<div class="admonition note">\n' + 
         '<p class="admonition-title">This is title</p>\n' +
-        '<p>first line\n    second line</p>\n</div>\n';
+        '<p>first line second line</p>\n</div>\n';
       render(text, adOpt).should.equal(out);
     });
 
@@ -28,7 +28,7 @@ describe('Admonition', function (){
       var text = '!!! DanGer "This is title"\n    first line\n    second line\n';
       var out = '<div class="admonition danger">\n' + 
         '<p class="admonition-title">This is title</p>\n' +
-        '<p>first line\n    second line</p>\n</div>\n';
+        '<p>first line second line</p>\n</div>\n';
       render(text, adOpt).should.equal(out);
     });
 
