@@ -118,4 +118,26 @@ describe('Admonition', function (){
       render(text, adOpt).should.equal(out);
     });
   });
+
+  describe('API compatability', function () {
+    it('setOptions', function () {
+      render.setOptions({
+        renderer: new render.Renderer(),
+        gfm: true,
+        tables: true,
+        breaks: false,
+        pedantic: false,
+        sanitize: false,
+        smartLists: true,
+        smartypants: false,
+        admonition: true
+      });
+
+      var text = '!!! note "This is title"\n    first line\n    second line\n';
+      var out = '<div class="admonition note">\n' +
+        '<p class="admonition-title">This is title</p>\n' +
+        '<p>first line second line</p>\n</div>\n\n';
+      render(text).should.equal(out);
+    });
+  });
 });
