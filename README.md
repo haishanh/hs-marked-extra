@@ -45,6 +45,12 @@ will produce:
 </div>
 ```
 
+### Install
+
+```text
+npm install hs-marked-extra --save
+```
+
 ### Usage
 
 ```js
