@@ -48,13 +48,38 @@ will produce:
 ### Usage
 
 ```js
-var render = require('hs-marked-extra');
+var md = require('hs-marked-extra');
 
-var text = '!!! note\nfist line here.\n';
-console.log(render(text));
+var text = '!!! note "Tile"\n    fist line here.\n';
+console.log(md(text, { admonition: true }));
 ```
 
+And the API is same with original [marked API][marked-api].
+
+```js
+var marked = require('marked');
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false,
+  admonition: true
+});
+
+console.log(marked('!!! note "Tile"\n    fist line here.\n'));
+```
+
+**Note:** option `admonition` is false by default, and it doesn't compatable with option `sanitize`.
+
+### License
+
+MIT
 
 [marked]: https://github.com/chjj/marked
 [waylan-md]: https://github.com/waylan/Python-Markdown/blob/master/markdown/extensions/admonition.py
 [waylan-ad]: https://pythonhosted.org/Markdown/extensions/admonition.html
+[marked-api]: https://github.com/chjj/marked#markedmarkdownstring-options-callback
