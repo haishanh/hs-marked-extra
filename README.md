@@ -81,6 +81,84 @@ console.log(marked('!!! note "Tile"\n    fist line here.\n'));
 
 **Note:** option `admonition` is false by default, and it doesn't compatable with option `sanitize`.
 
+
+### Admonition CSS example
+
+in less:
+
+```less
+.admonition {                                                                     
+  padding: 15px;                                                                  
+  margin-bottom: 20px;                                                            
+  border: 1px solid transparent;                                                  
+  border-radius: 4px;                                                             
+  text-align: left;                                                               
+  &.note,                                                                         
+  &.info,                                                                         
+  &.tips {                                                                        
+    color: #98802b;                                                               
+    background-color: #fff4cc;                                                    
+    border-color: #f7d869;                                                        
+  }                                                                               
+  &.warning,                                                                      
+  &.important {                                                                   
+    color: #a06510;                                                               
+    background-color: #fac170;                                                    
+    border-color: #d88d21;                                                        
+  }                                                                               
+  &.danger,                                                                       
+  &.critical {                                                                    
+    color: #b94a48;                                                               
+    background-color: #f2dede;                                                    
+    border-color: #eed3d7;                                                        
+  }                                                                               
+}                                                                                 
+                                                                                  
+.admonition-title {                                                               
+  font-weight: bold;                                                              
+  text-align: left;                                                               
+}
+```
+
+Or in CSS:
+
+```css
+.admonition {                                                                     
+  padding: 15px;                                                                  
+  margin-bottom: 20px;                                                            
+  border: 1px solid transparent;                                                  
+  border-radius: 4px;                                                             
+  text-align: left;                                                               
+}                                                                                 
+
+.admonition.note,                                                                 
+.admonition.info,                                                                 
+.admonition.tips {                                                                
+  color: #98802b;                                                                 
+  background-color: #fff4cc;                                                      
+  border-color: #f7d869;                                                          
+}                                                                                 
+
+.admonition.warning,                                                              
+.admonition.important {                                                           
+  color: #a06510;                                                                 
+  background-color: #fac170;                                                      
+  border-color: #d88d21;                                                          
+}                                                                                 
+
+.admonition.danger,                                                               
+.admonition.critical {                                                            
+  color: #b94a48;                                                                 
+  background-color: #f2dede;                                                      
+  border-color: #eed3d7;                                                          
+}                                                                                 
+
+.admonition-title {                                                               
+  font-weight: bold;                                                              
+  text-align: left;                                                               
+}
+```
+
 ### License
 
 MIT
