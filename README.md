@@ -63,7 +63,7 @@ console.log(md(text, { admonition: true }));
 And the API is same with original [marked API][marked-api].
 
 ```js
-var marked = require('marked');
+var marked = require('hs-marked-extra');
 marked.setOptions({
   renderer: new marked.Renderer(),
   gfm: true,
