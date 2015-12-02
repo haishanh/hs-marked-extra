@@ -1,6 +1,6 @@
 {
   "name": "hs-marked-extra",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Feature extension for marked",
   "main": "index.js",
   "scripts": {
@@ -9,8 +9,14 @@
   "repository": "git://github.com/haishanh/hs-marked-extra.git",
   "author": "HAN Haishan <haishanhan@gmail.com> (http://hanhaishan.com)",
   "license": "MIT",
-  "tags": ["markdown", "admonition"],
-  "keywords": ["markdown", "admonition"],
+  "tags": [
+    "markdown",
+    "admonition"
+  ],
+  "keywords": [
+    "markdown",
+    "admonition"
+  ],
   "dependencies": {
     "marked": "^0.3.5"
   },
